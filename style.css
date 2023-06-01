@@ -5,6 +5,755 @@ Description: The official theme for portfolio900
 Version: 1.0
 */
 
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
 body{
-    background: #ccc;
+ overflow-x: hidden;
+}
+  #top{
+     background: #fafdff;
+  }
+
+  /* fancy gallery gallery page */
+
+  #fancy_gallery{
+     margin-top: 150px;
+     margin-bottom: 100px;
+     display: flex;
+     justify-content: space-around;
+  }
+  .myFancyGallery{
+   display: flex;
+   justify-content: center;
+  }
+  .fancy_item{
+   margin-bottom: 40px;   
+   }
+
+  .fancy_item img{
+     height: 180px;
+     width: 100%;
+     border-radius: 6px;
+     object-fit: cover;
+  }
+
+
+
+  .navbar{
+     width: 100%;
+     position: fixed;
+     top: 0px;
+     display: grid;
+     align-items: center;
+     grid-template-columns: auto  auto;
+     padding: 0px 40px;
+     height: 75px;
+     box-shadow: 1px 1px 15px #444;
+     z-index: 10;
+     background: #fafdff;
+  }
+  .header_right{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  .logo img{
+     height: 80px;
+  }
+  .menu{
+    display: hidden;
+    height: auto;
+  }
+  .menu ul{
+     display: flex;
+     align-items: center;
+     overflow: hidden;
+     background:  #fafdff;
+     box-shadow: 1px 1px 15px #444, -1px -1px 15px #444;
+  }
+
+  .menu ul li{
+     list-style: none;
+     margin: 0 20px;
+     display: flex;
+     font-weight: 500;
+     flex-direction: column;
+     align-items: center;
+     position: relative;
+  }
+
+  .menu ul li a{
+    color: black;
+    text-decoration: none;
+  }
+
+  .menu ul li ul{
+     display: flex;
+     align-items: flex-start;
+     justify-content: center;
+     flex-direction: column;
+     background: #fafdff;
+     padding-right: 20px;
+     position: absolute;
+     top: 25px;
+     left: -20px;
+     height: auto;
+     overflow: hidden;
+     background: #222;
+     transition: all 0.4s; 
+     box-shadow: none;        
+  }
+
+  .menu ul li:hover > ul{
+     height: auto;
+  }
+
+  .menu ul li ul li{
+    margin: 10px 0px;
+  }
+  .menu ul li ul li a{
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .menu_bar{
+      display: flex;
+      justify-content: flex-end;
+      color: #00528c;
+      cursor: pointer;
+  }
+  .menu_bar ion-icon{
+      font-size: 32px;
+  }
+
+    .head{
+       position: relative;
+    }
+    .menu{
+     position: absolute;
+     top: 75px;
+     left: 0;
+     width: 100vw;
+     overflow: hidden;
+     background: #fafdff;
+     height: 0;
+     transition: all 0.4s;
+     z-index: -1;
+    }
+  
+    .menu ul{
+     z-index: 5;
+     padding:40px;
+     align-items: flex-start;
+     flex-direction: column;
+     justify-content: center;
+  }
+  #menu #menu_list{
+     display: grid;
+     grid-template-columns: auto auto auto auto auto;
+     justify-content: space-around;
+     border-top: 2px solid #00528c;
+  }
+  .menu ul li{
+     margin: 5px;
+     text-align: left;
+     display: flex;
+     align-items: flex-start;
+  }
+  /* .vartical_line{
+        height: 100%;
+        width: 1px;
+        background-color: #00528c;
+  } */
+  .menu ul li ul{       
+     width: 100%;
+     position: static;
+     overflow: hidden;
+     transition: all 0.4s; 
+     padding: 0 10px; 
+     background: transparent;  
+     color: #222;     
+  }
+  .menu ul li ul li{ 
+    margin: 0px;
+  }
+  .menu ul li ul li a{        
+     color: #222;        
+  }
+  .menu_bar{
+      height: 40px;
+      width: 40px;
+      display: block;
+      background: #eee;
+      color: #000;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1px 1px 2px #ccc, -1px -1px 2px #eee;
+  }
+  .Leader_name a{
+    color: #333;
+    text-decoration: none;
+  }
+  .big_text{
+    margin-top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .small_text{
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .big_text:hover, .small_text:hover{
+      color: #00528c;
+  }
+ .social_contact{
+     display: flex;
+     align-items: center;
+ }
+ .social_contact .facebook,  .social_contact .twitter{
+     margin: 0  0  0  10px;
+     font-size: 24px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+ }
+ .social_contact .facebook i,  .social_contact .twitter i{
+     color: #00528c;
+     width: 45px;
+     height: 45px;
+     padding: 8px;
+     border: 4px solid #00528c;
+     border-radius: 50%;
+ }
+ .social_contact .facebook i:hover,  .social_contact .twitter i:hover{
+     border: 4px solid #00528c;
+ }
+ #close_menubar{
+   display: none;
+ }
+
+ /* ================   banner section ==================== */
+ .banner{
+     margin-top: 40px;
+ }
+ .banner img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+ }
+ 
+ /* ======================== About Section ======================= */
+ .about{
+    background: #eee;
+ }
+ .about .slogan{
+    color: #222;
+ }
+ .about .slogan p{
+   font-size: 18px;
+}
+button a{
+   color: #fff;
+   text-decoration: none;
+}
+button a:hover{
+   color: #fff;
+   text-decoration: none;
+}
+ .more_about button{
+    margin-top: 20px;
+    padding: 6px 12px;
+    border-style: none;
+    background: #00528c;
+    color: #fff;
+    border-radius: 3px;
+ }
+ .myWidth{
+        width: 60%;
+ }
+ 
+
+ /* ==========================   Sambodhan Mantabya ======================= */
+ .headingPart{
+    width: 100%;
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+ .headingPart h2{
+    color: #00528c;
+ }
+ .headingPart hr{
+    margin-top: 0px;
+    text-align: center;
+    width: 10%;
+    height: 2px;
+    background: #00528c;
+    opacity: 1;
+ }
+ 
+ .headingPart p{
+     font-size: 20px;
+ }
+ .sambhodanMantabya .item{
+  box-shadow: 1px 1px 2px #ccc, -1px -1px 2px #eee;
+  padding: 20px;
+  text-align: center;
+ }
+ .sambhodanMantabya .item .image{
+    height: 280px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+ }
+ .sambhodanMantabya .item .image img{
+    height: 100%;
+ }
+ .sambhodanMantabya .item .item_text{
+   font-size: 18px;
+ }
+ .sambhodanMantabya .item .item_text p:hover{
+   color: #00528c;
+   cursor: pointer;
+ }
+
+ @media screen and (max-width:800px){
+    .myWidth{
+        width: 90%;
+    }
+ }
+ 
+ @media screen and (max-width:500px){
+    .myWidth{
+        width: 100%;
+    }
+ }
+ .more_about button:hover{
+    background: #0667ac;
+ }
+
+
+
+
+
+ /* latest press section css */
+
+.latest-press-heading {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+}
+
+.latest-press-hr-line {
+margin-top: -5px !important;
+background-color: #00528c;
+height: 2px !important;
+opacity: 99;
+}
+
+.view-all a {
+text-decoration: none;
+color: black;
+font-weight: 600;
+}
+.post{
+/* border: 1px solid black; */
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+border-radius: 10px;
+}
+.post img{
+/* transition: transform 0.3s ease; */
+height: 260px;
+width: 100%;
+object-fit: cover;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+} 
+.post:hover img{
+/* transform: scale(1.1); */
+cursor: pointer;
+} 
+.admin-div{
+display: flex;
+padding-left: 10px;
+gap: 20px;
+align-items: baseline;
+}
+.post-month{
+color: gray;
+}
+.admin a, .post-details a{
+text-decoration: none;
+color: black;
+}
+.post-details a:hover{
+   color: #025189;
+}
+.post-details a{
+   font-size: 18px;
+   font-weight: 500;
+   text-decoration: none;
+   color:#333;
+   }
+.dot{
+width: 5px;
+height: 5px;
+border-radius: 100%;
+/* margin-bottom: 10px; */
+background-color: rgb(188, 185, 185);
+}
+@media(max-width:700px) {
+.contact-info{
+ margin-left: 2px !important;
+}
+}
+/*============= footer section css ==================*/
+.footer {
+background-color: #2E50AE;
+}
+
+
+.footer-contact-content h4 {
+padding-top: 30px;
+color: #ffff;
+font-weight: 500;
+}
+
+.footer-info {
+color: #ffff;
+font-size: 16px;
+line-height: 36px;
+font-weight: 400;
+}
+
+.footer-info a {
+color: #ffff;
+}
+
+.extra-section h4 {
+padding-top: 30px;
+color: #ffff;
+font-weight: 500;
+}
+
+.footer-social-icon {
+padding: 15px 0px;
+display: flex;
+gap: 10px;
+align-items: center;
+font-size: 16px;
+font-weight: 600;
+}
+
+.footer-facebook-icon,
+.footer-twitter-icon {
+width: 30px;
+height: 30px;
+background-color: #ffff;
+border-radius: 50%;
+text-align: center;
+padding-top: 8px;
+
+}
+
+.footer-facebook-icon:hover,
+.footer-twitter-icon:hover {
+background-color: #062887;
+}
+
+.footer-social-icon a {
+color: #2E50AE;
+}
+
+.footer-social-icon a:hover {
+color: #ffff;
+}
+
+.extra-section ul li {
+list-style: none;
+font-size: 16px;
+line-height: 29px;
+font-weight: 400;
+color: #c5c2c2;
+}
+
+.extra-section ul li a {
+text-decoration: none;
+color: #ffff;
+
+}
+
+.extra-section ul li a:hover {
+color: #91acf7;
+}
+/* ================facebook page css=================================== */
+.facebook-page {
+padding-top: 30px;
+border: none;
+}
+
+
+/* ===================copyright section css =================================== */
+.copyright-section {
+background-color: #042173;
+padding: 10px 0px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 14px;
+color: #ffff;
+line-height: 26px;
+}
+
+.powered-by a {
+color: #ffff;
+text-decoration: none;
+}
+
+
+/* ================ Single Page Css ===================================== */
+.blog-section {
+   background-color: #fcfcfc;
+}
+
+.author-img {
+   width: 100px;
+}
+
+.blog-right-content {
+   background-color: #ffff;
+   /* border: 1px solid black; */
+   border-radius: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px 0px;
+   flex-direction: column;
+   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.admin-text {
+   font-size: 22px;
+   font-weight: bold;
+   color: #103d67;
+}
+
+.search-field {
+   padding: 5px 0px;
+   border: none;
+   width: 100%;
+   margin-top: 5px;
+   position: relative;
+}
+
+.search-field input {
+   padding: 15px 20px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+   position: absolute;
+   top: 22px;
+   right: 20px;
+   color: #025189;
+}
+
+.date-and-comment {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: gray;
+   font-size: 13px;
+}
+
+.date a {
+   text-decoration: none;
+   color: gray;
+   font-size: 13px;
+}
+
+.post-title {
+   font-size: 22px;
+   color: #025189;
+   font-weight: 700;
+}
+
+.recent-artical-heading {
+   font-size: 16px;
+}
+
+.widget-title {
+   font-weight: 700;
+   color:#025189;
+}
+
+.recent-artical-heading a {
+   text-decoration: none;
+   color: black;
+   font-weight: bold;
+}
+
+.recent-artical-heading:hover a {
+   color:#025189;
+}
+
+.category-row {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.tag-container {
+   display: flex;
+   /* justify-content: space-around; */
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 10px;
+}
+
+.tag-item {
+   border-radius: 4px;
+   padding: 2px 10px;
+   background-color: rgb(244, 240, 240);
+}
+
+.tag-item a {
+   display: block;
+   color: black;
+   text-decoration: none;
+   font-size: 13px;
+}
+
+.technology {
+   padding-left: 5px;
+   text-decoration: none;
+   font-size: 13px;
+   color: gray;
+}
+
+.icon-and-category i {
+   color:#025189;
+}
+.tag-container-section{
+   display: flex;
+   align-items: baseline;
+   gap: 10px;
+}
+
+
+
+
+@media(max-width:992px) {
+   #menu #menu_list{
+      grid-template-columns: auto auto auto;
+   }
+}
+
+@media(max-width:700px) {
+.facebook-page {
+ overflow-x: hidden;
+}
+
+.copyright-section {
+ display: flex;
+ flex-direction: column;
+}
+}
+
+@media(max-width:600px) {
+   #menu #menu_list{
+      grid-template-columns: auto auto;
+      height: 100vh;
+      overflow-y: scroll;
+      border: 1px solid red;
+   }
+}
+
+ @media screen and (max-width: 550px){
+    .navbar{
+     padding: 5px 15px;
+  }
+    .Leader_name h1{
+       font-size: 22px;
+    }
+    .social_contact {
+      padding-right: 10px;
+    }
+    .social_contact .facebook,  .social_contact .twitter{
+     margin: 0  0  0  6px;
+     font-size: 20px;
+    }
+    .social_contact .facebook i,  .social_contact .twitter i{
+     width: 35px;
+     height: 35px;
+     padding: 4px;
+    }
+     .menu_bar{
+      height: 30px;
+      width: 30px;
+   }
+   .menu_bar ion-icon{
+    font-size: 24px;
+   }
+ }
+
+
+ @media(max-width:430px) {
+   #menu #menu_list{
+      grid-template-columns: auto;
+   }
+}
+
+ @media screen and (max-width: 400px){
+    .navbar{
+     padding: 5px 10px;
+  }
+    .Leader_name h1{
+       font-size: 20px;
+    }
+    .social_contact .facebook,  .social_contact .twitter{
+     font-size: 18px;
+    }
+    .social_contact .facebook i,  .social_contact .twitter i{
+     width: 32px;
+     height: 32px;
+     padding: 3px;
+ }
+ }
+
+ 
+ @media screen and (max-width: 350px){
+   .menu_bar{
+      height: 30px;
+      width: 30px;
+   }
+   .navbar{
+    padding: 5px 10px;
+ }
+   .Leader_name h1{
+      font-size: 18px;
+   }
+   .social_contact {
+     padding-right: 8px;
+   }
+   .social_contact .facebook,  .social_contact .twitter{
+    margin: 0  0  0  6px;
+    font-size: 16px;
+   }
+   .social_contact .facebook i,  .social_contact .twitter i{
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+}
 }
