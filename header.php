@@ -155,3 +155,13 @@
         </div>
       </div>
     </section>
+
+    <section style="overflow: hidden">
+      <div class="">
+        <div class="row">
+          <div class="banner">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/banner/banner.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>

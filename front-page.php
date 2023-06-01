@@ -1,15 +1,5 @@
     <?php get_header() ?>
 
-    <section style="overflow: hidden">
-      <div class="">
-        <div class="row">
-          <div class="banner">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/banner/banner.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="about" style="overflow: hidden">
       <div class="container d-flex justify-content-center align-items-center py-5">
         <div class="row text-center myWidth">
@@ -59,14 +49,9 @@
 
         <div class="row mt-5">
         <?php
-         $args = array(
-           'post_type' => 'post', 
-           'posts_per_page' => 4, 
-         );
-         $blogposts = new WP_Query($args, $post_categories);
-
-         while ($blogposts->have_posts()){
-          $blogposts->the_post();
+        //getting all posts with pagination
+         while (have_posts()){
+           the_post();
          ?>
            
            <div class="col-lg-3 col-md-6">
@@ -79,7 +64,7 @@
               />
               <div class="post-section p-3">
                 <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
+                  <div class="admin"><a href=""><?php the_author(); ?></a></div>
                   <div class="dot"></div>
                   <div><p class="post-month"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></p></div>
                 </div>
