@@ -12,7 +12,7 @@
           </div>
           <div class="politics">
             <div class="gov_image">
-              <img src="./assets/img/logo/nepal-govt_0.png" alt="" />
+              <img src="<?php echo get_template_directory_uri(); ?>/img/logo/nepal-govt_0.png" alt="" />
             </div>
             <div class="political_description mt-3">
               <div class="political_name">
@@ -34,7 +34,8 @@
         </div>
       </div>
     </section>
-
+    
+     <!-- ===================== पछिल्लो प्रेस ============-->
     <section style="overflow: hidden">
       <div class="container latest-press-section py-5">
         <div class="latest-press-heading">
@@ -42,18 +43,23 @@
             <h1 class="">पछिल्लो प्रेस</h1>
           </div>
           <div>
-            <p class="view-all"><a href="post.html">- VIEW ALL</a></p>
+            <p class="view-all"><a href="next-press.html">- VIEW ALL</a></p>
           </div>
         </div>
         <hr class="latest-press-hr-line" />
 
         <div class="row mt-5">
-        <?php
-        //getting all posts with pagination
-         while (have_posts()){
-           the_post();
-         ?>
-           
+         <?php
+         $args = array(
+           'post_type' => 'post', 
+           'posts_per_page' => 4,
+           'category_name' => 'next-press',  
+         );
+         $blogposts = new WP_Query($args);
+
+         while ($blogposts->have_posts()){
+          $blogposts->the_post();
+         ?>  
            <div class="col-lg-3 col-md-6">
             <div class="post mb-4">
               <img
@@ -64,7 +70,66 @@
               />
               <div class="post-section p-3">
                 <div class="admin-div pt-3">
-                  <div class="admin"><a href=""><?php the_author(); ?></a></div>
+                  <!-- <div class="admin"><a href=""><?php the_author(); ?></a></div> -->
+                  <div class="admin"><a href=""><?php echo get_the_category_list(', '); ?></a></div>
+                  <div class="dot"></div>
+                  <div><p class="post-month"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></p></div>
+                </div>
+                <p class="fw-bold fs-5 post-details">
+                  <a href="<?php the_permalink(); ?>"
+                    > <?php echo wp_trim_words( get_the_title(), 10) ?> </a
+                  >
+                </p>
+              </div>
+             </div>
+           </div>
+
+        <?php
+          }
+        ?>
+        
+        </div>
+      </div>
+     <?php wp_reset_query(); ?>
+    </section>
+    
+     <!-- ===================== पत्रपत्रिकामा ============-->
+    <section style="overflow: hidden">
+      <div class="container latest-press-section py-5">
+        <div class="latest-press-heading">
+          <div>
+            <h1 class="">पत्रपत्रिकामा</h1>
+          </div>
+          <div>
+            <p class="view-all"><a href="patrapatrika.html">- VIEW ALL</a></p>
+          </div>
+        </div>
+        <hr class="latest-press-hr-line" />
+
+        <div class="row mt-5">
+         <?php
+         $args = array(
+           'post_type' => 'post', 
+           'posts_per_page' => 4,
+           'category_name' => 'patrapatrika',  
+         );
+         $blogposts = new WP_Query($args);
+
+         while ($blogposts->have_posts()){
+          $blogposts->the_post();
+         ?>  
+           <div class="col-lg-3 col-md-6">
+            <div class="post mb-4">
+              <img
+                src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>"
+                alt=""
+                class="w-100"
+                alt="jhapat"
+              />
+              <div class="post-section p-3">
+                <div class="admin-div pt-3">
+                  <!-- <div class="admin"><a href=""><?php the_author(); ?></a></div> -->
+                  <div class="admin"><a href=""><?php echo get_the_category_list(', '); ?></a></div>
                   <div class="dot"></div>
                   <div><p class="post-month"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></p></div>
                 </div>
@@ -86,119 +151,6 @@
      <?php wp_reset_query(); ?>
     </section>
 
-    <!-- ===================== पत्रपत्रिकामा ============-->
-    <section style="overflow: hidden">
-      <div class="container latest-press-section py-5">
-        <div class="latest-press-heading">
-          <div>
-            <h1 class="">पत्रपत्रिकामा</h1>
-          </div>
-          <div>
-            <p class="view-all"><a href="post.html">- VIEW ALL</a></p>
-          </div>
-        </div>
-        <hr class="latest-press-hr-line" />
-
-        <div class="row mt-5">
-          <div class="col-lg-3 col-md-6">
-            <div class="post mb-4">
-              <img
-                src="./assets/img/images/jhapat_post_image.jpeg"
-                alt=""
-                class="w-100"
-                alt="jhapat"
-              />
-              <div class="post-section p-3">
-                <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
-                  <div class="dot"></div>
-                  <div><p class="post-month">1month ago</p></div>
-                </div>
-                <p class="fw-bold fs-5 post-details">
-                  <a href="detail.html"
-                    >मन्त्री साउदकाे कडा निर्देशन, नैतिकता भन्दा ठुलाे अरू केही
-                    छैन। Jhapat Bahadur Saud</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="post mb-4">
-              <img
-                src="./assets/img/images/jhapat_post_image.jpeg"
-                alt=""
-                class="w-100"
-                alt="jhapat"
-              />
-              <div class="post-section p-3">
-                <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
-                  <div class="dot"></div>
-                  <div><p class="post-month">1month ago</p></div>
-                </div>
-                <p class="fw-bold fs-5 post-details">
-                  <a href="detail.html"
-                    >मन्त्री साउदकाे कडा निर्देशन, नैतिकता भन्दा ठुलाे अरू केही
-                    छैन। Jhapat Bahadur Saud</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="post mb-4">
-              <img
-                src="./assets/img/images/jhapat_post_image.jpeg"
-                alt=""
-                class="w-100"
-                alt="jhapat"
-              />
-              <div class="post-section p-3">
-                <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
-                  <div class="dot"></div>
-                  <div><p class="post-month">1month ago</p></div>
-                </div>
-                <p class="fw-bold fs-5 post-details">
-                  <a href="detail.html"
-                    >मन्त्री साउदकाे कडा निर्देशन, नैतिकता भन्दा ठुलाे अरू केही
-                    छैन। Jhapat Bahadur Saud</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="post mb-4">
-              <img
-                src="./assets/img/images/jhapat_post_image.jpeg"
-                alt=""
-                class="w-100"
-                alt="jhapat"
-              />
-              <div class="post-section p-3">
-                <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
-                  <div class="dot"></div>
-                  <div><p class="post-month">1month ago</p></div>
-                </div>
-                <p class="fw-bold fs-5 post-details">
-                  <a href="detail.html"
-                    >मन्त्री साउदकाे कडा निर्देशन, नैतिकता भन्दा ठुलाे अरू केही
-                    छैन। Jhapat Bahadur Saud</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== मेरा विचार ============-->
     <section style="overflow: hidden">
       <div class="container latest-press-section py-5">
@@ -207,109 +159,54 @@
             <h1 class="">मेरा विचार</h1>
           </div>
           <div>
-            <p class="view-all"><a href="post.html">- VIEW ALL</a></p>
+            <p class="view-all"><a href="mero-bichaar.html">- VIEW ALL</a></p>
           </div>
         </div>
         <hr class="latest-press-hr-line" />
 
         <div class="row mt-5">
-          <div class="col-lg-3 col-md-6">
-            <div class="post mb-4">
-              <img
-                src="./assets/img/images/jhapat_post_image.jpeg"
-                alt=""
-                class="w-100"
-                alt="jhapat"
-              />
-              <div class="post-section p-3">
-                <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
-                  <div class="dot"></div>
-                  <div><p class="post-month">1month ago</p></div>
-                </div>
-                <p class="fw-bold fs-5 post-details">
-                  <a href="detail.html"
-                    >मन्त्री साउदकाे कडा निर्देशन, नैतिकता भन्दा ठुलाे अरू केही
-                    छैन। Jhapat Bahadur Saud</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
+         <?php
+         $args = array(
+           'post_type' => 'post', 
+           'posts_per_page' => 4,
+           'category_name' => 'mero-bichaar',  
+         );
+         $blogposts = new WP_Query($args);
 
-          <div class="col-lg-3 col-md-6">
+         while ($blogposts->have_posts()){
+          $blogposts->the_post();
+         ?>  
+           <div class="col-lg-3 col-md-6">
             <div class="post mb-4">
               <img
-                src="./assets/img/images/jhapat_post_image.jpeg"
+                src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>"
                 alt=""
                 class="w-100"
                 alt="jhapat"
               />
               <div class="post-section p-3">
                 <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
+                  <!-- <div class="admin"><a href=""><?php the_author(); ?></a></div> -->
+                  <div class="admin"><a href=""><?php echo get_the_category_list(', '); ?></a></div>
                   <div class="dot"></div>
-                  <div><p class="post-month">1month ago</p></div>
+                  <div><p class="post-month"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></p></div>
                 </div>
                 <p class="fw-bold fs-5 post-details">
-                  <a href="detail.html"
-                    >मन्त्री साउदकाे कडा निर्देशन, नैतिकता भन्दा ठुलाे अरू केही
-                    छैन। Jhapat Bahadur Saud</a
+                  <a href="<?php the_permalink(); ?>"
+                    > <?php echo wp_trim_words( get_the_title(), 10) ?> </a
                   >
                 </p>
               </div>
-            </div>
-          </div>
+             </div>
+           </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="post mb-4">
-              <img
-                src="./assets/img/images/jhapat_post_image.jpeg"
-                alt=""
-                class="w-100"
-                alt="jhapat"
-              />
-              <div class="post-section p-3">
-                <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
-                  <div class="dot"></div>
-                  <div><p class="post-month">1month ago</p></div>
-                </div>
-                <p class="fw-bold fs-5 post-details">
-                  <a href="detail.html"
-                    >मन्त्री साउदकाे कडा निर्देशन, नैतिकता भन्दा ठुलाे अरू केही
-                    छैन। Jhapat Bahadur Saud</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="post mb-4">
-              <img
-                src="./assets/img/images/jhapat_post_image.jpeg"
-                alt=""
-                class="w-100"
-                alt="jhapat"
-              />
-              <div class="post-section p-3">
-                <div class="admin-div pt-3">
-                  <div class="admin"><a href="">admin</a></div>
-                  <div class="dot"></div>
-                  <div><p class="post-month">1month ago</p></div>
-                </div>
-                <p class="fw-bold fs-5 post-details">
-                  <a href="detail.html"
-                    >मन्त्री साउदकाे कडा निर्देशन, नैतिकता भन्दा ठुलाे अरू केही
-                    छैन। Jhapat Bahadur Saud</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
+        <?php
+          }
+        ?>
+        
         </div>
       </div>
+     <?php wp_reset_query(); ?>
     </section>
 
     <?php get_footer() ?>

@@ -102,7 +102,10 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-
+    
+    <!-- Share this ------ post share  -->
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=647449eb40353a0019caf05e&product=sop' async='async'></script>
+  
     <?php wp_footer(); ?>
   </body>
 </html>
