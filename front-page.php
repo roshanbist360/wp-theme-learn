@@ -29,7 +29,7 @@
             </div>
           </div>
           <div class="more_about">
-            <button><a href="./about.html">Read More</a></button>
+            <button><a href="<?php echo site_url('/about'); ?>">Read More</a></button>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
             <h1 class="">पछिल्लो प्रेस</h1>
           </div>
           <div>
-            <p class="view-all"><a href="next-press.html">- VIEW ALL</a></p>
+            <p class="view-all"><a href="<?php echo get_category_link(get_category_by_slug('next-press')->term_id); ?>">- VIEW ALL</a></p>
           </div>
         </div>
         <hr class="latest-press-hr-line" />
@@ -101,7 +101,7 @@
             <h1 class="">पत्रपत्रिकामा</h1>
           </div>
           <div>
-            <p class="view-all"><a href="patrapatrika.html">- VIEW ALL</a></p>
+            <p class="view-all"><a href="<?php echo get_category_link(get_category_by_slug('patrapatrika')->term_id); ?>">- VIEW ALL</a></p>
           </div>
         </div>
         <hr class="latest-press-hr-line" />
@@ -159,7 +159,7 @@
             <h1 class="">मेरा विचार</h1>
           </div>
           <div>
-            <p class="view-all"><a href="mero-bichaar.html">- VIEW ALL</a></p>
+            <p class="view-all"><a href="<?php echo get_category_link(get_category_by_slug('mero-bichaar')->term_id); ?>">- VIEW ALL</a></p>
           </div>
         </div>
         <hr class="latest-press-hr-line" />
