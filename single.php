@@ -68,13 +68,9 @@
                       </div>
                       <p class="admin-text pt-2">Admin</p>
                   </div>
-                  <div class="search-field" method="get" action="<?php echo home_url() ?>">
-                      <form class="search-form search-top" style="width:100%;">
-                          <input type="search" name="s" class="search-field" placeholder="Search article" value="<?php echo get_search_query(); ?>"/>
-                          <div class="search-icon">
-                              <i class="fa fa-search" aria-hidden="true"></i>
-                          </div>
-                      </form>
+                  
+                  <div class="sidebar">
+                     <?php dynamic_sidebar( 'main_sidebar' ); ?>
                   </div>
 
                   <div class="Recent-Articles py-4">

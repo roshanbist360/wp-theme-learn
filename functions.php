@@ -54,4 +54,20 @@ function gt_custom_post_type(){
 }
 add_action('init', 'gt_custom_post_type');
 
+
+//sidebar
+function gt_widgets(){
+  register_sidebar(
+    array(
+      'name' => 'Main Sidebar',
+      'id' => 'main_sidebar',
+      'before_title' => 'h3',
+      'after_title' => 'h3',
+    )
+    );
+}
+add_action('widgets_init', 'gt_widgets');
+
+
+
 ?>

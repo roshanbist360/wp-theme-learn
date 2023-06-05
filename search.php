@@ -1,17 +1,23 @@
 <?php get_header(); ?>
 
+<section class="blog-section py-5" style="overflow: hidden;">
+      <div class="container">        
+          <div class="row text-center">
+             <h2>Search results for: <?php echo get_search_query(); ?></h2>
+          </div>
+      </div>
+</section>
+
+  
   <?php 
      while (have_posts()){
      the_post();  
   ?>
   
-
-
   <section class="blog-section py-5" style="overflow: hidden;">
-      <div class="container">
-          <h2>Search results for <?php echo get_search_query(); ?></h2>
-          <div class="row">
-              <div class="col-lg-8 col-md-12 col-12">
+      <div class="container">        
+          <div class="row d-flex justify-content-center">
+              <div class="col-lg-8 col-md-10 col-12">
                   <div class="blog-left-img ">
                       <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>"
                           alt="" class="w-100" />
@@ -60,77 +66,6 @@
                       nonce="tPvfivrA"></script>
                   <!-- comment section -->
                   <div class="fb-comments" data-href="https://jhapatsaud.com/" data-width="auto" data-numposts="5">
-                  </div>
-              </div>
-              <div class="col-lg-4 col-md-12 col-12">
-                  <div class="blog-right-content">
-                      <div class="author-img pt-2">
-                          <img src="https://sofsee.com/default/profile.png" alt="Admin " class="w-100" />
-                      </div>
-                      <p class="admin-text pt-2">Admin</p>
-                  </div>
-                  <div class="search-field">
-                      <form class="search-form search-top" method="get"  style="width:100%;">
-                          <input type="search" class="search-field" placeholder="Search article" value="<?php echo get_search_query(); ?>"/>
-                          <div class="search-icon">
-                              <i class="fa fa-search" aria-hidden="true"></i>
-                          </div>
-                      </form>
-                  </div>
-
-                  <div class="Recent-Articles py-4">
-                      <h5 class="widget-title">Recent Posts</h5>
-                      <?php
-                       $args = array(
-                         'post_type' => 'post', 
-                         'posts_per_page' => 4,
-                       );
-                       $blogposts = new WP_Query($args);
-              
-                       while ($blogposts->have_posts()){
-                        $blogposts->the_post();
-                       ?>  
-
-                      <div class="row pt-3">
-                          <div class="col-lg-4">
-                              <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>"
-                                  alt="" class="w-100" />
-                          </div>
-                          <div class="col-lg-8">
-                              <div class="date">
-                                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                                  <a href=""><?php echo get_the_date('l, j F Y'); ?></a>
-                              </div>
-                              <div>
-                                  <h3 class="recent-artical-heading">
-                                      <a href=""> <?php  the_title(); ?></a>
-                                  </h3>
-                              </div>
-                          </div>
-                      </div>
-
-                      <?php
-                       }
-                      ?>
-                  </div>
-
-                  <div class="Categories py-4">
-                      <h5 class="widget-title">Categories</h5>
-                      <div class="category-row">
-                          <div class="icon-and-category">
-                              <i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;<a href=""
-                                  class="technology"><?php the_category('<br> <i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;&nbsp;'); ?></a>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="tags py-4">
-                      <h5 class="widget-title">Tags</h5>
-                      <div class="tag-container">
-                          <div class="tag-item">
-                                <?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>
-                          </div>
-                      </div>
                   </div>
               </div>
           </div>
