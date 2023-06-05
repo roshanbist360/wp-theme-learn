@@ -8,3 +8,4 @@ function closeMenu() {
     document.getElementById("open_menubar").style.display = "flex";
     document.getElementById("close_menubar").style.display = "none";
 }
+

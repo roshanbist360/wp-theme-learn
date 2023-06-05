@@ -14,9 +14,13 @@
   
   //adding font-awesome
   wp_enqueue_style('fontawesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
-}
 
+  //adding timeline
+  wp_enqueue_style('vertical-timeline', get_theme_file_uri('./assets/dist/vertical-timeline.css'), NULL, microtime(), 'all');
+  wp_enqueue_script("vertical-timeline", get_theme_file_uri('./assets/dist/vertical-timeline.js'), NULL, microtime(), true);
+}
 add_action('wp_enqueue_scripts', 'gt_setup');
+
 
 
 //adding theme support: post thumbnails (i.e featured image on posts) and custom site title and other supports

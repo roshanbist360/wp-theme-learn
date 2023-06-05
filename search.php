@@ -9,6 +9,7 @@
 
   <section class="blog-section py-5" style="overflow: hidden;">
       <div class="container">
+          <h2>Search results for <?php echo get_search_query(); ?></h2>
           <div class="row">
               <div class="col-lg-8 col-md-12 col-12">
                   <div class="blog-left-img ">
@@ -68,9 +69,9 @@
                       </div>
                       <p class="admin-text pt-2">Admin</p>
                   </div>
-                  <div class="search-field" method="get" action="<?php echo home_url() ?>">
-                      <form class="search-form search-top" style="width:100%;">
-                          <input type="search" name="s" class="search-field" placeholder="Search article" value="<?php echo get_search_query(); ?>"/>
+                  <div class="search-field">
+                      <form class="search-form search-top" method="get"  style="width:100%;">
+                          <input type="search" class="search-field" placeholder="Search article" value="<?php echo get_search_query(); ?>"/>
                           <div class="search-icon">
                               <i class="fa fa-search" aria-hidden="true"></i>
                           </div>

@@ -81,6 +81,12 @@
       type="image/png"
       sizes="16x16"
     />
+    
+     <!-- Timeline -->
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"
+    />
 
      <?php wp_head();  ?>
   </head>

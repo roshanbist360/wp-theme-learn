@@ -105,7 +105,22 @@
     
     <!-- Share this ------ post share  -->
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=647449eb40353a0019caf05e&product=sop' async='async'></script>
-  
+    
+    <!-- timeline -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+      $("#vt1").verticalTimeline();
+      $("#vt2").verticalTimeline();
+      $("#vt3").verticalTimeline({ startLeft: false });
+      $("#vt4").verticalTimeline({
+        startLeft: false,
+        arrows: false,
+        alternate: false,
+      });
+      $("#vt5").verticalTimeline({ animate: "fade" });
+      $("#vt6").verticalTimeline({ animate: "slide" });
+    </script>
+
     <?php wp_footer(); ?>
   </body>
 </html>
