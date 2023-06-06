@@ -1,12 +1,12 @@
 <?php
 
  function gt_setup(){
-   //adding css files
+   //adding css file
   wp_enqueue_style('style', get_stylesheet_uri(), NULL, microtime(), 'all');
-  
+ 
   //adding js files
   wp_enqueue_script("main", get_theme_file_uri('/js/main.js'), NULL, microtime(), true );
- 
+
   //adding google fonts
   wp_enqueue_style('google-fonts', '//fonts.googleapis.com');
   wp_enqueue_style('google-fonts', '//fonts.gstatic.com');
@@ -14,10 +14,6 @@
   
   //adding font-awesome
   wp_enqueue_style('fontawesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
-
-  //adding timeline
-  wp_enqueue_style('vertical-timeline', get_theme_file_uri('./assets/dist/vertical-timeline.css'), NULL, microtime(), 'all');
-  wp_enqueue_script("vertical-timeline", get_theme_file_uri('./assets/dist/vertical-timeline.js'), NULL, microtime(), true);
 }
 add_action('wp_enqueue_scripts', 'gt_setup');
 

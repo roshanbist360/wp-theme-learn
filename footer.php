@@ -108,6 +108,8 @@
     
     <!-- timeline -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/vertical-timeline.js"></script>
+
     <script>
       $("#vt1").verticalTimeline();
       $("#vt2").verticalTimeline();
