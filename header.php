@@ -81,8 +81,12 @@
       type="image/png"
       sizes="16x16"
     />
-    
-     <!-- Timeline -->
+     
+      <!-- gallery fancy box -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+        <!-- Timeline -->
      <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"
@@ -114,7 +118,7 @@
                 <ul id="dropdown_menu">
                   <li><a href="<?php echo get_category_link(get_category_by_slug('news')->term_id); ?>" class="small_text">समाचार</a></li>
                   <li><a href="<?php echo site_url('/video-gallery'); ?>" class="small_text">भिडियो ग्यालरी </a></li>
-                  <li><a href="<?php echo site_url('/photo-gallery'); ?>" class="small_text">फोटो ग्यालरी</a></li>
+                  <li><a href="<?php echo site_url('/imagegallery'); ?>" class="small_text">फोटो ग्यालरी</a></li>
                 </ul>
               </li>
   

@@ -32,25 +32,25 @@ function gt_init(){
 add_action('after_setup_theme', 'gt_init');
 
 
-//Projects Post Type
+// Image Gallery Post Type
 function gt_custom_post_type(){
-    register_post_type('project', 
-       array(
-        'rewrite' => array('slug' => 'projects'),
-        'labels' => array(
-            'name' => 'Projects',
-            'singular_name' => 'Project',
-            'add_new_item' => 'Add New Project',
-            'edit_item' => 'Edit Project'
-        ),
-         'menu-icon' => 'dashicons-clipboard',  //"search dashboard icons for wordpress on google" to see all icons
-          'public' => true, //if its for adimn only we can use private
+  register_post_type('image_gallery', 
+      array(
+          'rewrite' => array('slug' => 'image-gallery'),
+          'labels' => array(
+              'name' => 'Image Gallery',
+              'singular_name' => 'Image Gallery',
+              'add_new_item' => 'Add New Image Gallery',
+              'edit_item' => 'Edit Image Gallery'
+          ),
+          'menu_icon' => 'dashicons-images', // Use the 'dashicons-images' icon for the menu
+          'public' => true,
           'has_archive' => true,
           'supports' => array(
-             'title', 'thumbnail', 'editor', 'excerpt', 'comments'
+              'title', 'thumbnail', 'editor', 'excerpt', 'comments'
           )
-        )
-    );
+      )
+  );
 }
 add_action('init', 'gt_custom_post_type');
 

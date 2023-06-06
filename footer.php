@@ -39,7 +39,7 @@
               </li>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
-                <a href="<?php echo site_url('/photo-gallery'); ?>">फोटो ग्यालरी</a>
+                <a href="<?php echo site_url('/imagegallery'); ?>">फोटो ग्यालरी</a>
               </li>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -53,7 +53,7 @@
             <ul>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
-                <a href="<?php echo get_category_link(get_category_by_slug('about')->term_id); ?>">मेरो बारेमा</a>
+                <a href="<?php echo site_url('/about'); ?>">मेरो बारेमा</a>
               </li>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -120,6 +120,25 @@
       $("#vt5").verticalTimeline({ animate: "fade" });
       $("#vt6").verticalTimeline({ animate: "slide" });
     </script>
+     
+
+     <!-- for gallery fancybox -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>
+           $('[data-fancybox="gallery"]').fancybox({
+            buttons: [
+              "share",
+              "download",
+            //   "zoom",
+              "slideShow",
+              "fullscreen",
+              "thumbs",
+              "close"
+             ],
+           });
+        </script>
 
     <?php wp_footer(); ?>
   </body>
