@@ -117,7 +117,7 @@
                 <a onclick="dropdown()" class="big_text">मिडिया</a>
                 <ul id="dropdown_menu">
                   <li><a href="<?php echo get_category_link(get_category_by_slug('news')->term_id); ?>" class="small_text">समाचार</a></li>
-                  <li><a href="<?php echo site_url('/video-gallery'); ?>" class="small_text">भिडियो ग्यालरी </a></li>
+                  <li><a href="<?php echo site_url('/videogallery'); ?>" class="small_text">भिडियो ग्यालरी </a></li>
                   <li><a href="<?php echo site_url('/imagegallery'); ?>" class="small_text">फोटो ग्यालरी</a></li>
                 </ul>
               </li>

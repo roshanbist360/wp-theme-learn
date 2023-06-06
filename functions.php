@@ -39,11 +39,11 @@ function gt_custom_post_type(){
           'rewrite' => array('slug' => 'image-gallery'),
           'labels' => array(
               'name' => 'Image Gallery',
-              'singular_name' => 'Image Gallery',
+              'singular_name' => ' Image Gallery',
               'add_new_item' => 'Add New Image Gallery',
               'edit_item' => 'Edit Image Gallery'
           ),
-          'menu_icon' => 'dashicons-images', // Use the 'dashicons-images' icon for the menu
+          'menu_icon' => 'dashicons-format-gallery', // Use the 'dashicons-images' icon for the menu
           'public' => true,
           'has_archive' => true,
           'supports' => array(
@@ -53,6 +53,58 @@ function gt_custom_post_type(){
   );
 }
 add_action('init', 'gt_custom_post_type');
+
+// ======================================== Video Gallery Post Type ==========================================
+function gt_custom_post_type2() {
+  register_post_type('video_gallery',
+      array(
+          'rewrite' => array('slug' => 'video-gallery'),
+          'labels' => array(
+              'name' => 'Video Gallery',
+              'singular_name' => 'All Video Gallery',
+              'add_new_item' => 'Add New Video Gallery',
+              'edit_item' => 'Edit Video Gallery'
+          ),
+          'menu_icon' => 'dashicons-video-alt2', // Use the 'dashicons-images' icon for the menu
+          'public' => true,
+          'has_archive' => true,
+          'supports' => array(
+              'title', 'thumbnail', 'editor', 'excerpt', 'comments'
+          ),
+          'register_meta_box_cb' => 'gt_add_video_url_meta_box' // Callback function to add meta box for video URL
+      )
+  );
+}
+add_action('init', 'gt_custom_post_type2');
+
+function gt_add_video_url_meta_box() {
+  add_meta_box(
+      'video_url_meta_box',
+      'YouTube Video URL',
+      'gt_render_video_url_meta_box',
+      'video_gallery',
+      'normal',
+      'high'
+  );
+}
+
+function gt_render_video_url_meta_box($post) {
+  // Retrieve the stored YouTube video URL
+  $video_url = get_post_meta($post->ID, 'video_url', true);
+  ?>
+  <label for="video_url">YouTube Video URL:</label>
+  <input type="text" name="video_url" id="video_url" value="<?php echo esc_attr($video_url); ?>" style="width: 100%;" />
+  <?php
+}
+
+// Save the video URL when the post is saved or updated
+function gt_save_video_url_meta_box($post_id) {
+  if (isset($_POST['video_url'])) {
+      $video_url = sanitize_text_field($_POST['video_url']);
+      update_post_meta($post_id, 'video_url', $video_url);
+  }
+}
+add_action('save_post_video_gallery', 'gt_save_video_url_meta_box');
 
 
 //sidebar

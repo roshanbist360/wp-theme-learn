@@ -1,8 +1,18 @@
 <?php get_header(); ?>
 
-<section style="overflow:hidden" id="fancy_gallery">
+<section style="overflow:hidden" id="fancy_gallery" class="py-5 my-0">
     <div class="container">
-        <div class="row myFancyGallery">
+      <div class="latest-press-heading">
+        <div>
+          <h1 class="">Video Gallery:</h1>
+        </div>
+        <div>
+           <p class="view-all" style="font-weight:bold">- ALL Videos</p>
+         </div>
+       </div>
+      <hr class="latest-press-hr-line" />
+    <div class="row myFancyGallery mt-5">
+
         <?php
         // Get the post ID from the query parameter
         $post_id = isset($_GET['post_id']) ? absint($_GET['post_id']) : 0;
@@ -13,7 +23,6 @@
         if ($gallery_images) {
             $post_title = get_the_title($post_id);
             ?>
-            <h2 class="text-center mb-5">Image Gallery For : <?php echo esc_html($post_title); ?></h2>
             <?php
             foreach ($gallery_images as $image_url) {
                 ?>

@@ -43,7 +43,7 @@
               </li>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
-                <a href="<?php echo site_url('/video-gallery'); ?>">भिडियो ग्यालरी </a>
+                <a href="<?php echo site_url('/videogallery'); ?>">भिडियो ग्यालरी </a>
               </li>
             </ul>
           </div>
