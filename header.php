@@ -106,13 +106,13 @@
                 <a onclick="dropdown()" class="big_text">झपट बहादुर साउँद</a>
                 <ul id="dropdown_menu">
                   <li><a href="<?php echo site_url('/about'); ?>" class="small_text">मेरो बारेमा</a></li>
-                  <li><a href="<?php echo site_url('/dream'); ?>" class="small_text"> सपना</a></li>
+                  <li><a href="<?php echo get_category_link(get_category_by_slug('dream')->term_id); ?>" class="small_text"> सपना</a></li>
                 </ul>
               </li>        
               <li id="nav_team">
                 <a onclick="dropdown()" class="big_text">मिडिया</a>
                 <ul id="dropdown_menu">
-                  <li><a href="<?php echo site_url('/news'); ?>" class="small_text">समाचार</a></li>
+                  <li><a href="<?php echo get_category_link(get_category_by_slug('news')->term_id); ?>" class="small_text">समाचार</a></li>
                   <li><a href="<?php echo site_url('/video-gallery'); ?>" class="small_text">भिडियो ग्यालरी </a></li>
                   <li><a href="<?php echo site_url('/photo-gallery'); ?>" class="small_text">फोटो ग्यालरी</a></li>
                 </ul>
@@ -121,16 +121,16 @@
               <li id="nav_team">
                 <a onclick="dropdown()" class="big_text">जीवन रेखा</a>
                 <ul id="dropdown_menu">
-                  <li><a href="<?php echo site_url('/past-life'); ?>" class="small_text">प्रारम्भिक जीवन</a></li>
-                  <li><a href="<?php echo site_url('/social'); ?>" class="small_text">सामाजिक</a></li>
-                  <li><a href="<?php echo site_url('/political'); ?>" class="small_text">राजनीतिक</a></li>
+                  <li><a href="<?php echo get_category_link(get_category_by_slug('early-life')->term_id); ?>" class="small_text">प्रारम्भिक जीवन</a></li>
+                  <li><a href="<?php echo get_category_link(get_category_by_slug('social')->term_id); ?>" class="small_text">सामाजिक</a></li>
+                  <li><a href="<?php echo get_category_link(get_category_by_slug('political')->term_id); ?>" class="small_text">राजनीतिक</a></li>
                 </ul>
               </li>
               <li id="nav_team">
                 <a onclick="dropdown()" class="big_text">विविध विषय</a>
                 <ul id="dropdown_menu">
-                  <li><a href="<?php echo site_url('/blog'); ?>" class="small_text">ब्लग</a></li>
-                  <li><a href="<?php echo site_url('/article'); ?>" class="small_text">लेख</a></li>
+                  <li><a href="<?php echo get_category_link(get_category_by_slug('blog')->term_id); ?>" class="small_text">ब्लग</a></li>
+                  <li><a href="<?php echo get_category_link(get_category_by_slug('article')->term_id); ?>" class="small_text">लेख</a></li>
                 </ul>
               </li>
             </ul>

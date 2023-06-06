@@ -35,7 +35,7 @@
             <ul>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
-                <a href="<?php echo site_url('/news'); ?>">समाचार</a>
+                <a href="<?php echo get_category_link(get_category_by_slug('news')->term_id); ?>">समाचार</a>
               </li>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -53,11 +53,11 @@
             <ul>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
-                <a href="<?php echo site_url('/about'); ?>">मेरो बारेमा</a>
+                <a href="<?php echo get_category_link(get_category_by_slug('about')->term_id); ?>">मेरो बारेमा</a>
               </li>
               <li>
                 <i class="fa fa-caret-right" aria-hidden="true"></i>
-                <a href="<?php echo site_url('/dream'); ?>">सपना</a>
+                <a href="<?php echo get_category_link(get_category_by_slug('dream')->term_id); ?>">सपना</a>
               </li>
             </ul>
           </div>
