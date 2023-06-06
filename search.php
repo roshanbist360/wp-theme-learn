@@ -8,7 +8,7 @@
       </div>
 </section>
 
-  
+ <?php if(have_posts()) { ?>  <!--this first line of code is to check if searched results have posts -->
   <?php 
      while (have_posts()){
      the_post();  
@@ -71,9 +71,18 @@
           </div>
       </div>
   </section>
-
- <?php
+  <?php
    }
-  ?>
+   ?><!-- closing of while -->
+  
+ <?php  } else{  ?>
+       <div class="container mb-5">        
+       <div class="row d-flex justify-content-center">
+         <div class="col-lg-5 col-md-8 col-10 d-flex justify-content-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/images/no-result-found.webp" alt="" />
+         </div>
+       </div>
+       </div>
+ <?php }?><!-- closing of have posts -->
 
 <?php get_footer(); ?>
